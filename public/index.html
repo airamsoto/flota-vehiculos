@@ -76,8 +76,93 @@
         <p>Coste medio por kilómetro: 0,05 &euro; &nbsp; | &copy; 2025 Plataforma EV</p>
     </footer>
 
+    <!--Practica sesión 2 laboratorio-->
+    <section id="vehiculos">
+        
+        <table>
+           <caption>Vehiculos disponibles</caption>
+            <tr>
+                <th scope="col">Matricula</th>
+                <th scope="col"> Marca</th>
+                <th scope="col">Autonomia (km)</th>
+            </tr>
+            <tbody>
+                <tr>
+                    <td>
+                        UJDF
+                    </td>
+                    <td>
+                        tesla
+                    </td>
+                    <td>
+                        120.000
+                    </td>
+                </tr>
+            </tbody>
+    </section>
+<br><br>
+<br><br>
+    <section id="reservas">
+
+        <form>
+            <fieldset>
+                <legend>Solicitud de reserva</legend>
+            <label for="usuario"> Nombre</label>
+            <input type="text" id="usuario" name="usuario" required>
+            <br><br>
+
+            <label for="usuario"> Correo electronico</label>
+            <input type="text" id="usuario" name="usuario" required>
+            <br><br>
+            <br><br>
 
 
+            <label for="vehiculo">Elige un vehiculo:</label>
+            <select id="vehiculo" name="vehiculo">
+                <option value="Tesla">Tesla</option>
+                <option value="Audi">Audi</option>
+                <option value="mercedes">Mercedes</option>
+            </select>
+
+            <br> <br> <br>
+            <label for="fechaIni">Fecha de inicio: </label>
+            <input type="date" id="fechaIni" name="fechaIni" required>
+            
+            <br> <br>
+
+            <label for="fechaFin">Fecha de fin: </label>
+            <input type="date" id="fechaFin" name="fechaFin" required>           
+            <br> <br>
+            
+            <label for="horaIni">Hora de inicio: </label>
+            <input type="time" id="horaIni" name="horaIni" required>
+            
+            <br> <br>
+            
+            <label for="horaFin">Hora de fin: </label>
+            <input type="time" id="horaFin" name="horaFin" required>
+
+            <br> <br>
+
+            <label for="telefono">Telefono</label>
+            <input type="tel" name="telefono" id="telefono" pattern="[0-9]{9}">
+
+
+            <br> <br>
+            <label for="aceptarCondiciones">Acepto condiciones</label>
+            <input type="checkbox" id="aceptarCondiciones" name="aceptarCondiciones" required>
+            <br> <br>
+
+
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpiar">
+            
+            </fieldset>
+        </form>
+    </section>
+    <br><br>
+
+    
 </body>
 
 </html>
