@@ -1,22 +1,118 @@
-header {
-    display: flex;
-    background-color: #B21648;
-    border-radius: 10px;
-    text-align: center;
-    margin-bottom: 5px;
-}
 
-nav a{
-    border-radius: 8px;
-    border-color: hwb(340 96% 2%);
-    background-color: rgb(255, 254, 254);
-    margin: 5px;
+header {
+  display: flex;        
+  background-color: #3c9a5f;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  position: relative;
+  justify-content: center;
+  height: auto;
+  
+
 }
-nav a:hover {
-    border-radius: 5px;
-    
-} 
+header img {
+    position: static;
+    left: 10px;
+}
 
 nav {
-    text-align: center;
+  text-align: left;
+  margin: 25px;
+  
+}
+
+nav a {
+  border-radius: 8px;
+  border: 1px solid #67c587;
+  background-color: #ffffff;
+  margin: 5px;
+  color: #3c9a5f;
+  text-decoration: none;
+  padding: 8px 12px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #2d7448;
+  color: white;
+  border-radius: 5px;
+}
+
+
+h2 {
+    background-color: #67c587;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+
+/*nuevo*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f6f8;
+  color: #333;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h1, h2, h3 {
+  font-family: "Segoe UI", Verdana, sans-serif;
+}
+
+/* FORMULARIOS */
+input[type="submit"],
+input[type="reset"] {
+  background-color: #3c9a5f;   /* Verde principal */
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+  background-color: #2d7448;   /* Verde oscuro */
+}
+
+/* TABLA */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+th, td {
+  border: 1px solid #67c587;
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: #3c9a5f;
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  background-color: #3c9a5f;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 20px;
 }
