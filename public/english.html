@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Vehicle Fleet Management</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <header>
+        <img id="logo" src="./images/logo2.png" alt="Website logo" width="250">
+        <h1>WeiZhu Vehicles &copy;</h1>
+         <button aria-label="Language selector">
+            <a href="index.html" class="lang-switch" hreflang="es" aria-label="Change to Spanish version">Español</a>
+        </button>
+    </header>
+
+    <nav aria-label="Navigation menu">
+        <a href="#home" accesskey="h" aria-label="Go to home section">Home</a>
+        <a href="#vehicles" accesskey="v" aria-label="Go to vehicles section">Vehicles</a>
+        <a href="#reservations" accesskey="r" aria-label="Go to reservations section">Reservations</a>
+        <a href="contacto.html" accesskey="c" aria-label="Go to contact section">Contact</a>
+    </nav>
+
+    <main>
+        <h2>Sustainable mobility platform</h2>
+        <p>
+            This <strong>web application</strong> enables the <em>efficient management</em> of
+            an <strong>electric vehicle fleet</strong>, facilitating <em>reservation, monitoring and maintenance</em>
+            from an accessible environment.
+        </p>
+
+        <section>
+            <h3>Benefits of electric vehicles</h3>
+            <ol>
+                <li>Fuel savings</li>
+                <li>Less pollution</li>
+                <li>Less noise pollution</li>
+            </ol>
+        </section>
+
+        <section>
+            <h3>Main services of the platform</h3>
+            <ul>
+                <li>Vehicle reservation</li>
+                <li>Statistics</li>
+                <li>JOSE</li>
+            </ul>
+        </section>
+
+        <section>
+            <h3>Key definitions</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>HyperText Markup Language used to structure the content of web pages.</dd>
+
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets used to style and layout those pages.</dd>
+
+                <dt>JSON</dt>
+                <dd>A lightweight text format for data interchange between systems or applications.</dd>
+            </dl>
+        </section>
+
+        <section>
+            <h3>Useful links</h3>
+            <a href="https://www.ucm.es" target="_blank">Complutense University of Madrid</a>
+        </section>
+
+        <section>
+            <h3>Images</h3>
+            <img src="images/vehiculos/tesla1.png" alt="Electric vehicle" width="300">
+
+            <a href="images/vehiculos/tesla2.png" target="_blank">
+                <img src="images/vehiculos/tesla2.png" alt="Thumbnail of electric vehicle" width="100">
+            </a>
+        </section>
+
+        <section>
+            <h3>Videos</h3>
+            <iframe src="https://www.youtube.com/embed/-kkE2m6-i3o" title="Video about electric mobility" allowfullscreen>
+            </iframe>
+        </section>
+
+        <section>
+            <h2 id="vehicles">Vehicles Section</h2>
+            <p>All available vehicles will be listed here soon.</p>
+        </section>
+
+        <!-- Lab session 2 practice -->
+        <section id="vehicles">
+            <table>
+                <caption>Available vehicles</caption>
+                <tr>
+                    <th scope="col">License plate</th>
+                    <th scope="col">Make</th>
+                    <th scope="col">Range (km)</th>
+                </tr>
+                <tbody>
+                    <tr>
+                        <td>UJDF</td>
+                        <td>Tesla</td>
+                        <td>120000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="reservations">
+            <form>
+                <fieldset>
+                    <legend>Reservation request</legend>
+
+                    <label for="usuario">Name</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                    <br><br>
+
+                    <label for="usuario">Email</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                    <br><br><br>
+
+                    <label for="vehiculo">Choose a vehicle:</label>
+                    <select id="vehiculo" name="vehiculo">
+                        <option value="Tesla">Tesla</option>
+                        <option value="Audi">Audi</option>
+                        <option value="mercedes">Mercedes</option>
+                    </select>
+
+                    <br><br><br>
+
+                    <label for="fechaIni">Start date: </label>
+                    <input type="date" id="fechaIni" name="fechaIni" required>
+                    <br><br>
+
+                    <label for="fechaFin">End date: </label>
+                    <input type="date" id="fechaFin" name="fechaFin" required>
+                    <br><br>
+
+                    <label for="horaIni">Start time: </label>
+                    <input type="time" id="horaIni" name="horaIni" required>
+                    <br><br>
+
+                    <label for="horaFin">End time: </label>
+                    <input type="time" id="horaFin" name="horaFin" required>
+                    <br><br>
+
+                    <label for="telefono">Phone</label>
+                    <input type="tel" name="telefono" id="telefono" pattern="[0-9]{9}">
+                    <br><br>
+
+                    <label for="aceptarCondiciones">I accept terms</label>
+                    <input type="checkbox" id="aceptarCondiciones" name="aceptarCondiciones" required>
+                    <br><br>
+
+                    <input type="submit" value="Send" aria-label="Submit form button">
+                    <input type="reset" value="Clear" aria-label="Reset form button">
+
+                </fieldset>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>© 2025 WeiZhu</p>
+    </footer>
+
+</body>
+
+</html>

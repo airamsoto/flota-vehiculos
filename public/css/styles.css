@@ -15,6 +15,20 @@ header img {
     left: 10px;
 }
 
+header button {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    background-color: #67c587;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
 nav {
   text-align: left;
   margin: 25px;
@@ -65,6 +79,7 @@ main {
   background-color: white;
   padding: 20px;
   border-radius: 10px;
+  width: 80rem;
 }
 
 h1, h2, h3 {
