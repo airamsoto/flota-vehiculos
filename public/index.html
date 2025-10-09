@@ -5,108 +5,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Flota de Vehículos Eléctricos</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- id para poder cambiar dinámicamente -->
+    <link rel="stylesheet" href="css/styles.css" id="theme-link">
 </head>
 
-<body>
 
 
 
 
-    <header>
-        <img id="logo" src="./images/logo2.png" alt="Logo de la página" width="250">
-        <h1>WeiZhu Vehiculos &copy;</h1>
+<header>
+    <img id="logo" src="./images/logo2.png" alt="Logo de la página" width="250">
+    <h1>WeiZhu Vehiculos &copy;</h1>
+    <!--arreglar para poner con javascript-->
+    <a href="english.html" class="lang-switch" hreflang="en" aria-label="Cambiar a la versión en inglés">English</a>
 
-        <button aria-label="Selector de idioma">
-            <a href="english.html" class="lang-switch" hreflang="en" aria-label="Cambiar a la versión en inglés">English</a>
-        </button>
-    </header>
+    <!--Ponemos el id para identificarlo de cara al JavaScript TENEMOS QUE CAMBIAR LO QUE DICE EL BOTON CUANDO ESTA EN ALTO CONTRASTE-->
+    <button id="contrast-toggle" aria-pressed="false" aria-label="Cambiar a modo alto contraste">
+        Alto Contraste
+    </button>
+    <!--script para cambiar el contraste-->
+    <script src="js/contrast.js"></script>
 
-    <nav aria-label="Menú de navegacion">
+</header>
 
-        <a href="#inicio" accesskey="i" aria-label="Ir a la seccion de inicio">Inicio</a>
-        <a href="#vehiculos" accesskey="v" aria-label="Ir a la seccion de vehiculos">Vehiculos</a>
-        <a href="#reservas" accesskey="r" aria-label="Ir a la seccion de reservas">Reservas</a>
-        <a href="contacto.html" accesskey="c" aria-label="Ir a la seccion de contacto"> Contacto</a>
+<nav aria-label="Menú de navegacion">
 
-    </nav>
+    <a href="#inicio" accesskey="i" aria-label="Ir a la seccion de inicio">Inicio</a>
+    <a href="#vehiculos" accesskey="v" aria-label="Ir a la seccion de vehiculos">Vehiculos</a>
+    <a href="#reservas" accesskey="r" aria-label="Ir a la seccion de reservas">Reservas</a>
+    <a href="contacto.html" accesskey="c" aria-label="Ir a la seccion de contacto"> Contacto</a>
 
-
-    <main>
-        <h2>Plataforma de movilidad sostenible</h2>
-        <p>
-            Esta <strong>aplicación web</strong> permite la <em>gestión eficiente</em> de
-            una flota de <strong>vehículos eléctricos</strong>, facilitando la
-            <em>reserva, control y mantenimiento</em> desde un entorno accesible.
-        </p>
-        <section>
-            <h3>Beneficios de los vehiculos electricos</h3>
-            <ol>
-
-                <li>Ahorro de combustible</li>
-                <li>Menos contaminacion</li>
-                <li>Menos contaminacion acustica</li>
-            </ol>
-        </section>
-        <section>
-            <h3>Servicios principales de la plataforma</h3>
-            <ul>
-                <li>Reserva de vehiculos</li>
-                <li>Estadisticas</li>
-                <li>JOSE</li>
-            </ul>
-
-        </section>
+</nav>
 
 
-        <section>
-            <h3>Definiciones calve</h3>
-            <dl>
+<main>
+    <h2>Plataforma de movilidad sostenible</h2>
+    <p>
+        Esta <strong>aplicación web</strong> permite la <em>gestión eficiente</em> de
+        una flota de <strong>vehículos eléctricos</strong>, facilitando la
+        <em>reserva, control y mantenimiento</em> desde un entorno accesible.
+    </p>
+    <section>
+        <h3>Beneficios de los vehiculos electricos</h3>
+        <ol>
 
-                <dt>HTML</dt>
-                <dd>Lenguaje de marcado de hipertexto y se usa para estructurar el contenido de las páginas web</dd>
+            <li>Ahorro de combustible</li>
+            <li>Menos contaminacion</li>
+            <li>Menos contaminacion acustica</li>
+        </ol>
+    </section>
+    <section>
+        <h3>Servicios principales de la plataforma</h3>
+        <ul>
+            <li>Reserva de vehiculos</li>
+            <li>Estadisticas</li>
+            <li>Mis reservas</li>
+        </ul>
 
-                <dt>CSS</dt>
-                <dd>Hojas de estilo en cascada y se utiliza para dar estilo y diseño a esas páginas</dd>
-
-                <dt>JSON</dt>
-                <dd>Es un formato de texto ligero para el intercambio de datos entre sistemas o aplicaciones</dd>
-            </dl>
-        </section>
-
-        <section>
-            <h3>Enlaces de interes</h3>
-            <a href="https://www.ucm.es" target="_blank">Universidad Complutense de Madrid</a>
-
-        </section>
-
-        <section>
-            <h3>Imagenes</h3>
-
-            <img src="images/vehiculos/tesla1.png" alt="Vehículo electrico" width="300">
-
-            <a href="images/vehiculos/tesla2.png" target="_blank">
-                <img src="images/vehiculos/tesla2.png" alt="Miniatura de vehículo eléctrico" width="100">
-            </a>
-        </section>
-
-        <section>
-            <h3>Videos</h3>
-            <iframe src="https://www.youtube.com/embed/-kkE2m6-i3o" title="Video sobre movilidad eléctrica" allowfullscreen>
-        </iframe> 
-        </section>
+    </section>
 
 
-      <section> 
+    <section>
+        <h3>Definiciones calve</h3>
+        <dl>
 
-        <h2 id="vehiculos">Sección de Vehículos</h2>
-        <p>Próximamente se listarán aquí todos los vehículos disponibles.</p>
-        
+            <dt>HTML</dt>
+            <dd>Lenguaje de marcado de hipertexto y se usa para estructurar el contenido de las páginas web</dd>
 
-</section>
-<!--Practica sesión 2 laboratorio-->
-<section id="vehiculos">
+            <dt>CSS</dt>
+            <dd>Hojas de estilo en cascada y se utiliza para dar estilo y diseño a esas páginas</dd>
 
+            <dt>JSON</dt>
+            <dd>Es un formato de texto ligero para el intercambio de datos entre sistemas o aplicaciones</dd>
+        </dl>
+    </section>
+
+    <section>
+        <h3>Enlaces de interes</h3>
+        <a href="https://www.ucm.es" target="_blank">Universidad Complutense de Madrid</a>
+
+    </section>
+
+    <section>
+        <h3>Imagenes</h3>
+
+        <img src="images/vehiculos/tesla1.png" alt="Vehículo electrico" width="300">
+
+        <a href="images/vehiculos/tesla2.png" target="_blank">
+            <img src="images/vehiculos/tesla2.png" alt="Miniatura de vehículo eléctrico" width="100">
+        </a>
+    </section>
+
+    <section>
+        <h3>Videos</h3>
+        <iframe src="https://www.youtube.com/embed/-kkE2m6-i3o" title="Video sobre movilidad eléctrica" allowfullscreen>
+        </iframe>
+    </section>
+
+
+
+    <!--Practica sesión 2 laboratorio-->
+    <section id="vehiculos">
+        <h2>Sección de Vehículos</h2>
         <table>
             <caption>Vehiculos disponibles</caption>
             <tr>
@@ -129,70 +129,62 @@
             </tbody>
         </table>
     </section>
-  
-    <section id="reservas">
 
+    <section id="reservas">
+        <h2>Formulario de reservas</h2>
         <form>
             <fieldset>
                 <legend>Solicitud de reserva</legend>
+
                 <label for="usuario"> Nombre</label>
                 <input type="text" id="usuario" name="usuario" required>
-                <br><br>
-
-                <label for="usuario"> Correo electronico</label>
-                <input type="text" id="usuario" name="usuario" required>
-                <br><br>
-                <br><br>
 
 
-                <label for="vehiculo">Elige un vehiculo:</label>
-                <select id="vehiculo" name="vehiculo">
+                <label for="usuario_email"> Correo electronico</label>
+                <input type="email" id="usuario_email" name="usuario_email" required>
+
+
+
+                <label for="vehiculo_form">Elige un vehiculo:</label>
+                <select id="vehiculo_form" name="vehiculo_form">
                     <option value="Tesla">Tesla</option>
                     <option value="Audi">Audi</option>
                     <option value="mercedes">Mercedes</option>
                 </select>
 
-                <br> <br> <br>
                 <label for="fechaIni">Fecha de inicio: </label>
                 <input type="date" id="fechaIni" name="fechaIni" required>
 
-                <br> <br>
-
                 <label for="fechaFin">Fecha de fin: </label>
                 <input type="date" id="fechaFin" name="fechaFin" required>
-                <br> <br>
 
                 <label for="horaIni">Hora de inicio: </label>
                 <input type="time" id="horaIni" name="horaIni" required>
 
-                <br> <br>
-
                 <label for="horaFin">Hora de fin: </label>
                 <input type="time" id="horaFin" name="horaFin" required>
-
-                <br> <br>
 
                 <label for="telefono">Telefono</label>
                 <input type="tel" name="telefono" id="telefono" pattern="[0-9]{9}">
 
+                <div class="checkbox">
+                    <label for="aceptarCondiciones">Acepto las condiciones</label>
+                    <input type="checkbox" id="aceptarCondiciones" name="aceptarCondiciones" required>
 
-                <br> <br>
-                <label for="aceptarCondiciones">Acepto condiciones</label>
-                <input type="checkbox" id="aceptarCondiciones" name="aceptarCondiciones" required>
-                <br> <br>
+                </div>
 
-
-                <input type="submit" value="Enviar" aria-label="Boton de enviar formulario">
-                <input type="reset" value="Limpiar" aria-label="Boton para borrar contenido del formulario">
-
+                <div class="botones-accion">
+                    <input type="submit" value="Enviar">
+                    <input type="reset" value="Limpiar">
+                </div>
             </fieldset>
         </form>
     </section>
 
-    </main>
-    <footer>
-        <p>copy; 2025 WheiZhu</p>
-    </footer>
+</main>
+<footer>
+    <p>copy; 2025 WheiZhu</p>
+</footer>
 
 
 </body>

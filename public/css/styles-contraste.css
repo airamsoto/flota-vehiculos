@@ -1,0 +1,251 @@
+/* styles-contraste.css - Estilo de alto contraste */
+
+/* Tipografía y base accesible */
+:root{
+    --bg: #000000;         /* negro puro */
+    --panel: #0b0b0b;      /* casi negro para paneles */
+    --text: #ffffff;       /* texto principal blanco */
+    --accent: #ffd600;     /* amarillo brillante para controles */
+    --accent-2: #00e5ff;   /* cian brillante para enlaces */
+    --focus: #ff6f00;      /* color de foco intenso */
+    --border: #ffffff;     /* bordes blancos */
+    --muted: #bfbfbf;      /* texto secundario */
+    --round: 4px;
+}
+
+html, body {
+    height: 100%;
+    font-size: 18px; /* mayor tamaño por accesibilidad */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg);
+    color: var(--text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Contenedor principal */
+main {
+    max-width: 1000px;
+    margin: 24px auto;
+    background-color: var(--panel);
+    padding: 24px;
+    border-radius: 6px;
+    width: auto;
+    border: 3px solid var(--border);
+    box-shadow: 0 0 0 3px rgba(255,214,0,0.04);
+}
+
+/* Encabezados */
+h1, h2, h3 {
+    font-family: "Segoe UI", Verdana, sans-serif;
+    color: var(--text);
+    margin: 0 0 12px 0;
+}
+
+h2 {
+    background-color: transparent;
+    color: var(--text);
+    padding: 6px 8px;
+    border-radius: var(--round);
+    border: 2px solid var(--border);
+    display: inline-block;
+}
+
+/* Header */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--panel);
+    border-radius: 6px;
+    margin-bottom: 12px;
+    position: relative;
+    padding: 12px;
+    border: 2px solid var(--border);
+}
+
+header img {
+    position: static;
+    left: 10px;
+    border: 2px solid var(--border);
+    border-radius: 4px;
+    background: var(--panel);
+}
+
+header button {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+    background-color: var(--accent);
+    color: #000;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: filter 0.15s ease;
+    box-shadow: none;
+    border: 2px solid #000;
+}
+
+/* Hover / focus estados muy contrastados */
+header button:hover,
+header button:active {
+    filter: brightness(0.9);
+}
+
+header button:focus,
+button:focus,
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--focus);
+    outline-offset: 2px;
+    box-shadow: none;
+}
+
+/* Navegación */
+nav {
+    text-align: left;
+    margin: 18px 0;
+}
+
+nav a {
+    display: inline-block;
+    border-radius: 4px;
+    border: 2px solid var(--border);
+    background-color: transparent;
+    margin: 6px;
+    color: var(--accent-2);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 8px 12px;
+    font-weight: 700;
+    transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+nav a:hover,
+nav a:active {
+    background-color: var(--accent-2);
+    color: #000;
+    text-decoration: none;
+    border-color: #000;
+}
+
+/* Formularios */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select,
+textarea {
+    background: transparent;
+    color: var(--text);
+    border: 2px solid var(--border);
+    padding: 8px;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="submit"],
+input[type="reset"],
+button[type="submit"],
+button[type="reset"] {
+    background-color: var(--accent);
+    color: #000;
+    border: 2px solid #000;
+    padding: 10px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: transform 0.06s ease;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    transform: translateY(-1px);
+}
+
+/* Enlaces inline */
+a {
+    color: var(--accent-2);
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+a:hover {
+    color: var(--accent);
+    background: transparent;
+}
+
+/* Tabla de alto contraste */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: transparent;
+    border: 2px solid var(--border);
+}
+
+th, td {
+    border: 2px solid var(--border);
+    padding: 12px;
+    text-align: center;
+    color: var(--text);
+}
+
+th {
+    background-color: #000;
+    color: var(--accent);
+    font-weight: 800;
+}
+
+/* Filas alternas con suficiente contraste */
+tbody tr:nth-child(odd) {
+    background: rgba(255,255,255,0.02);
+}
+tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.04);
+}
+
+/* Footer */
+footer {
+    background-color: var(--panel);
+    color: var(--text);
+    text-align: center;
+    padding: 12px;
+    border-radius: 6px;
+    margin-top: 20px;
+    border: 2px solid var(--border);
+}
+
+/* Accesibilidad: foco visible para teclado */
+:focus-visible {
+    outline: 3px solid var(--focus) !important;
+    outline-offset: 2px;
+}
+
+/* Aumentar contraste de imágenes importantes */
+img[alt] {
+    border: 2px solid var(--border);
+}
+
+/* Reducir bordes redondeados para mayor legibilidad */
+* {
+    border-radius: 0 !important;
+}
+
+/* Preferencias de alto contraste del usuario (si aplica) */
+@media (prefers-contrast: high) {
+    :root{
+        --panel: #000;
+        --border: #fff;
+    }
+}
