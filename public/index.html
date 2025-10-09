@@ -130,19 +130,20 @@
         </table>
     </section>
 
-    <section id="reservas">
+    <section id="reservas_form">
         <h2>Formulario de reservas</h2>
-        <form>
+        <form id="formulario_reserva">
             <fieldset>
                 <legend>Solicitud de reserva</legend>
 
                 <label for="usuario"> Nombre</label>
                 <input type="text" id="usuario" name="usuario" required>
+                <span id="errorNombre" style="color:red; font-size: small;"></span>
 
 
                 <label for="usuario_email"> Correo electronico</label>
                 <input type="email" id="usuario_email" name="usuario_email" required>
-
+                <span id="errorEmail" style="color:red; font-size: small;"></span>
 
 
                 <label for="vehiculo_form">Elige un vehiculo:</label>
@@ -154,9 +155,11 @@
 
                 <label for="fechaIni">Fecha de inicio: </label>
                 <input type="date" id="fechaIni" name="fechaIni" required>
+                <span id="errorFechaIni" style="color:red; font-size: small;"></span>
 
                 <label for="fechaFin">Fecha de fin: </label>
                 <input type="date" id="fechaFin" name="fechaFin" required>
+                <span id="errorFechaFin" style="color:red; font-size: small;"></span>
 
                 <label for="horaIni">Hora de inicio: </label>
                 <input type="time" id="horaIni" name="horaIni" required>
@@ -187,6 +190,7 @@
 </footer>
 
 
+<script src="js/formulario.js" defer></script> <!--ponemos defer para que se cargue despues de todo el html AQUI ENLAZAMOS-->
 </body>
 
 </html>
