@@ -197,6 +197,8 @@ fieldset label { /* comentario: etiqueta dentro de fieldset */
 fieldset input[type="text"], /* comentario: input tipo texto */
 fieldset input[type="email"], /* comentario: input tipo email */
 fieldset input[type="date"], /* comentario: input tipo fecha */
+fieldset input[type="number"], /* comentario: input tipo número */
+fieldset input[type="password"], /* comentario: input tipo contraseña */
 fieldset input[type="time"], /* comentario: input tipo hora */
 fieldset input[type="tel"], /* comentario: input tipo teléfono */
 fieldset select, /* comentario: select */
@@ -306,3 +308,17 @@ fieldset {
     flex-direction: column;
     gap: 0.5rem;
 }
+
+
+
+/*Validación visual de campos*/
+
+input.campo-invalido, select.campo-invalido {
+    border: 2px solid red !important;
+}
+
+input.campo-valido, select.campo-valido {
+    border: 2px solid green !important;
+}
+
+

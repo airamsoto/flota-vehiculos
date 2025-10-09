@@ -32,7 +32,7 @@
 
     <a href="#inicio" accesskey="i" aria-label="Ir a la seccion de inicio">Inicio</a>
     <a href="#vehiculos" accesskey="v" aria-label="Ir a la seccion de vehiculos">Vehiculos</a>
-    <a href="#reservas" accesskey="r" aria-label="Ir a la seccion de reservas">Reservas</a>
+    <a href="#reservas_form" accesskey="r" aria-label="Ir a la seccion de reservas">Reservas</a>
     <a href="contacto.html" accesskey="c" aria-label="Ir a la seccion de contacto"> Contacto</a>
 
 </nav>
@@ -59,15 +59,7 @@
         <ul>
             <li>Reserva de vehiculos</li>
             <li>Estadisticas</li>
-            <li>Mis reservas</li>
-        </ul>
 
-    </section>
-
-
-    <section>
-        <h3>Definiciones calve</h3>
-        <dl>
 
             <dt>HTML</dt>
             <dd>Lenguaje de marcado de hipertexto y se usa para estructurar el contenido de las páginas web</dd>
@@ -140,18 +132,32 @@
                 <input type="text" id="usuario" name="usuario" required>
                 <span id="errorNombre" style="color:red; font-size: small;"></span>
 
+                <label for="apellidos"> Apellidos</label>
+                <input type="text" id="apellidos" name="apellidos" required>
+                <span id="errorApellidos" style="color:red; font-size: small;"></span>
 
                 <label for="usuario_email"> Correo electronico</label>
                 <input type="email" id="usuario_email" name="usuario_email" required>
                 <span id="errorEmail" style="color:red; font-size: small;"></span>
 
 
+                 <label for="password"> Contraseña</label>
+                <input type="password" id="password" name="password" required>
+                <span id="errorPassword" style="color:red; font-size: small;"></span>
+
+
                 <label for="vehiculo_form">Elige un vehiculo:</label>
                 <select id="vehiculo_form" name="vehiculo_form">
-                    <option value="Tesla">Tesla</option>
-                    <option value="Audi">Audi</option>
-                    <option value="mercedes">Mercedes</option>
+                    <option value="" disabled selected>Seleccionar...</option>
+                    <option value="Coche">Coche</option>
+                    <option value="Patinete">Patinete</option>
+                    <option value="Moto">Moto</option>
                 </select>
+                <span id="errorVehiculo" style="color:red; font-size: small;"></span>
+
+                <label for="duracion"> Duracion de reserva</label>
+                <input type="text" id="duracion" name="duracion" required>
+                <span id="errorDuracion" style="color:red; font-size: small;"></span>
 
                 <label for="fechaIni">Fecha de inicio: </label>
                 <input type="date" id="fechaIni" name="fechaIni" required>
@@ -161,6 +167,8 @@
                 <input type="date" id="fechaFin" name="fechaFin" required>
                 <span id="errorFechaFin" style="color:red; font-size: small;"></span>
 
+
+                <!--Cambiar los campos de inicio y fin por numero de horas-->
                 <label for="horaIni">Hora de inicio: </label>
                 <input type="time" id="horaIni" name="horaIni" required>
 
@@ -177,8 +185,8 @@
                 </div>
 
                 <div class="botones-accion">
-                    <input type="submit" value="Enviar">
-                    <input type="reset" value="Limpiar">
+                    <input type="submit" id="submitForm" value="Enviar">
+                    <input type="reset" id="resetForm" value="Limpiar">
                 </div>
             </fieldset>
         </form>
@@ -186,7 +194,8 @@
 
 </main>
 <footer>
-    <p>copy; 2025 WheiZhu</p>
+    <p>&copy; 2025 WeiZhu. Todos los derechos reservados.</p>
+
 </footer>
 
 
