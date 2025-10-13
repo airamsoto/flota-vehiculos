@@ -93,15 +93,12 @@ header .lang-switch:hover { /* comentario: hover del enlace de idioma */
     color: var(--white); /* comentario: mantener texto blanco */
 } /* comentario: fin hover */
 
-/* Focus outline accesible */ /* comentario: enfoque accesible */
+/* Focus outline accesible */ /* comentario: enfoque accesible * REVISAR SI NO HACE FALTA MIRAR ESTO/
 button:focus, /* comentario: foco en botones */
 a:focus, /* comentario: foco en enlaces */
 input:focus, /* comentario: foco en inputs */
 select:focus, /* comentario: foco en selects */
-textarea:focus { /* comentario: foco en textareas */
-    outline: 3px solid rgba(99, 162, 119, 0.35); /* comentario: contorno visible para accesibilidad */
-    outline-offset: 2px; /* comentario: separar outline del elemento */
-} /* comentario: fin focus */
+
 
 /* Nav */ /* comentario: navegación principal */
 nav { /* comentario: contenedor nav */
@@ -271,19 +268,7 @@ footer { /* comentario: contenedor footer */
     margin-top: 0.25rem;
 }
 
-/* Forzar que los botones de acción siempre queden al final */
-.botones-accion {
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-start;
-    margin-top: 0.25rem;
-}
 
-/* Si no quieres cambiar HTML, asegúrate de que los botones se sitúen al final visualmente */
-input[type="submit"],
-input[type="reset"] {
-    order: 999; /* empuja visualmente los botones al final */
-}
 
 /* Alineado checkbox cuando se usa input + label separados */
 input[type="checkbox"] {
@@ -322,3 +307,55 @@ input.campo-valido, select.campo-valido {
 }
 
 
+.form-progress {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0 1rem 0;
+}
+
+.form-progress progress {
+    width: 100%;
+    height: 14px;
+    appearance: none;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.form-progress progress::-webkit-progress-bar {
+    background: #fff;
+}
+
+.form-progress progress::-webkit-progress-value {
+    background: var(--green);
+}
+
+.form-progress #progressLabel {
+    min-width: 48px;
+    text-align: right;
+    font-weight: 600;
+}
+
+button[type="submit"],
+button[type="reset"] {
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 8px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    margin-right: 0.5rem;
+}
+
+button[type="submit"]:hover,
+button[type="reset"]:hover {
+    background-color: var(--green-dark);
+}
+
+button[type="submit"],
+button[type="reset"] {
+    order: 999;
+}
