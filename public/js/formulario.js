@@ -70,7 +70,7 @@ const vehiculoForm = document.getElementById('vehiculo_form');
 const errorVehiculo = document.getElementById('errorVehiculo');
 if (vehiculoForm && errorVehiculo) {
     vehiculoForm.addEventListener('input', function() {
-        if ((vehiculoForm.value || '') === '') {
+        if (vehiculoForm.value === '') {
             errorVehiculo.textContent = 'Por favor, selecciona un vehículo.';
             vehiculoForm.classList.add('campo-invalido');
         } else {
@@ -80,6 +80,7 @@ if (vehiculoForm && errorVehiculo) {
         }
     });
 }
+
 
 const campoDuracion = document.getElementById('duracion');
 const errorDuracion = document.getElementById('errorDuracion');
