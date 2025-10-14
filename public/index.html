@@ -136,26 +136,26 @@
                 </div>
 
                 <label for="usuario"> Nombre</label>
-                <input type="text" id="usuario" name="usuario" required>
-                <span id="errorNombre" style="color:red; font-size: small;"></span>
+                <input type="text" id="usuario" name="usuario" required aria-describedby="errorNombre">
+                <span id="errorNombre" style="color:red; font-size: small;" aria-live="polite"></span>
 
                 <label for="apellidos"> Apellidos</label>
-                <input type="text" id="apellidos" name="apellidos" required>
-                <span id="errorApellidos" style="color:red; font-size: small;"></span>
+                <input type="text" id="apellidos" name="apellidos" required aria-describedby="errorApellidos">
+                <span id="errorApellidos" style="color:red; font-size: small;" aria-live="polite"></span>
 
                 <label for="usuario_email"> Correo electronico</label>
-                <input type="email" id="usuario_email" name="usuario_email" required>
-                <span id="errorEmail" style="color:red; font-size: small;"></span>
+                <input type="email" id="usuario_email" name="usuario_email" required aria-describedby="errorEmail">
+                <span id="errorEmail" style="color:red; font-size: small;" aria-live="polite"></span>
 
 
                 <label for="password"> Contraseña</label>
-                <input type="password" id="password" name="password" required>
-                <span id="errorPassword" style="color:red; font-size: small;"></span>
+                <input type="password" id="password" name="password" required aria-describedby="errorPassword">
+                <span id="errorPassword" style="color:red; font-size: small;" aria-live="polite"></span>
 
 
                 <label for="vehiculo_form">Elige un vehiculo:</label>
-                <select id="vehiculo_form" name="vehiculo_form">
-                    <option value="" disabled selected>Seleccionar...</option>
+                <select id="vehiculo_form" name="vehiculo_form" required aria-describedby="errorVehiculo">
+                    <option value="" disabled selected hidden>Seleccionar...</option>
                     <option value="Coche">Coche</option>
                     <option value="Patinete">Patinete</option>
                     <option value="Moto">Moto</option>
@@ -163,15 +163,15 @@
                 <span id="errorVehiculo" style="color:red; font-size: small;"></span>
 
                 <label for="duracion"> Duracion de reserva</label>
-                <input type="text" id="duracion" name="duracion" required>
+                <input type="text" id="duracion" name="duracion" required aria-describedby="errorDuracion">
                 <span id="errorDuracion" style="color:red; font-size: small;"></span>
 
                 <label for="fechaIni">Fecha de inicio: </label>
-                <input type="date" id="fechaIni" name="fechaIni" required>
+                <input type="date" id="fechaIni" name="fechaIni" required aria-describedby="errorFechaIni">
                 <span id="errorFechaIni" style="color:red; font-size: small;"></span>
 
                 <label for="fechaFin">Fecha de fin: </label>
-                <input type="date" id="fechaFin" name="fechaFin" required>
+                <input type="date" id="fechaFin" name="fechaFin" required aria-describedby="errorFechaFin">
                 <span id="errorFechaFin" style="color:red; font-size: small;"></span>
 
 

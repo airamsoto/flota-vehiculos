@@ -1,344 +1,130 @@
-/* ...existing code... */ /* comentario: marcador de código existente */ 
-
-/* Reset / global */ /* comentario: sección de reinicio y reglas globales */
-*, /* comentario: selector universal */
-*::before, /* comentario: pseudo-elemento before de todos los elementos */
-*::after { /* comentario: pseudo-elemento after de todos los elementos */
-    box-sizing: border-box; /* comentario: incluir padding y border en el ancho/alto */
-} /* comentario: fin reset box-sizing */
-
-:root{ /* comentario: variables CSS globales */
-    --green: #3c9a5f; /* comentario: color principal verde */
-    --green-dark: #2d7448; /* comentario: verde oscuro para hover */
-    --green-mid: #67c587; /* comentario: verde intermedio */
-    --bg: #f4f6f8; /* comentario: color de fondo de la página */
-    --text: #222; /* comentario: color de texto principal */
-    --white: #fff; /* comentario: blanco */
-    --radius: 8px; /* comentario: radio de borde por defecto */
-    --gap: 0.75rem; /* comentario: espaciado base */
-} /* comentario: fin :root */
-
-/* Base */ /* comentario: estilos base */
-html, body { /* comentario: aplicados a html y body */
-    height: 100%; /* comentario: alto completo para elementos de altura relativa */
-    margin: 0; /* comentario: eliminar margen por defecto */
-    font-family: Arial, Helvetica, sans-serif; /* comentario: pila tipográfica */
-    color: var(--text); /* comentario: color de texto usando variable */
-    background-color: var(--bg); /* comentario: fondo usando variable */
-    line-height: 1.6; /* comentario: altura de línea legible */
-} /* comentario: fin base html/body */
-
-img { /* comentario: reglas para imágenes */
-    max-width: 100%; /* comentario: evitar que la imagen exceda el contenedor */
-    height: auto; /* comentario: mantener aspecto al escalar */
-    display: block; /* comentario: eliminar espacio inferior inline */
-} /* comentario: fin img */
-
-/* Header */ /* comentario: estilos del encabezado */
-header { /* comentario: contenedor del header */
-    display: flex; /* comentario: layout flexible */
-    align-items: center; /* comentario: centrar verticalmente */
-    gap: 1rem; /* comentario: separación entre elementos */
-    background-color: var(--green); /* comentario: fondo verde */
-    padding: 0.75rem 1rem; /* comentario: espaciado interno */
-    border-radius: 10px; /* comentario: bordes redondeados */
-    margin: 0.75rem; /* comentario: margen alrededor */
-    position: relative; /* comentario: posicionamiento relativo para elementos hijos */
-} /* comentario: fin header */
-
-/* Logo: mantener tamaño fijo razonable */ /* comentario: nota sobre logo */
-header img { /* comentario: imagen dentro del header */
-    width: 160px; /* comentario: ancho fijo recomendado */
-    height: auto; /* comentario: altura proporcional */
-    object-fit: contain; /* comentario: ajustar contenido sin recortar */
-} /* comentario: fin header img */
-
-/* H1 centrado ocupando el espacio disponible */ /* comentario: título centrado */
-header h1 { /* comentario: h1 dentro del header */
-    margin: 0; /* comentario: eliminar margen por defecto */
-    flex: 1 1 auto; /* comentario: permitir que ocupe espacio flexible */
-    text-align: center; /* comentario: centrar texto */
-    font-size: 1.25rem; /* comentario: tamaño de fuente */
-    color: var(--white); /* comentario: color del texto blanco */
-    font-weight: 700; /* comentario: peso de fuente seminegrita */
-} /* comentario: fin header h1 */
-
-/* Link idioma justo a la izquierda del botón */ /* comentario: nota de posición */
-header .lang-switch { /* comentario: enlace para cambiar idioma */
-    color: var(--white); /* comentario: color blanco */
-    text-decoration: none; /* comentario: sin subrayado */
-    padding: 0.25rem 0.5rem; /* comentario: relleno */
-    border-radius: 6px; /* comentario: bordes redondeados */
-    border: 1px solid rgba(255,255,255,0.15); /* comentario: borde semitransparente */
-} /* comentario: fin lang-switch */
-
-/* Botón del header: evitar absolute, usar margin-left auto si hace falta */ /* comentario: estrategia layout botón */
-/* Como el h1 usa flex:1, el botón quedará a la derecha */ /* comentario: explicación */
-header button { /* comentario: botón en el header */
-    background-color: var(--green-mid); /* comentario: fondo verde intermedio */
-    color: var(--white); /* comentario: texto blanco */
-    border: none; /* comentario: sin borde visible */
-    padding: 8px 14px; /* comentario: relleno del botón */
-    border-radius: 6px; /* comentario: bordes redondeados */
-    cursor: pointer; /* comentario: cursor indicador clicable */
-    font-weight: bold; /* comentario: texto en negrita */
-    transition: background-color 0.2s ease; /* comentario: transición de fondo suave */
-    margin-left: 0.25rem; /* comentario: pequeño margen izquierdo */
-} /* comentario: fin header button */
-
-/* Hover / focus accesible */ /* comentario: estados interactivos */
-header button:hover, /* comentario: hover del botón */
-header .lang-switch:hover { /* comentario: hover del enlace de idioma */
-    background-color: var(--green-dark); /* comentario: fondo más oscuro en hover */
-    color: var(--white); /* comentario: mantener texto blanco */
-} /* comentario: fin hover */
-
-/* Focus outline accesible */ /* comentario: enfoque accesible * REVISAR SI NO HACE FALTA MIRAR ESTO/
-button:focus, /* comentario: foco en botones */
-a:focus, /* comentario: foco en enlaces */
-input:focus, /* comentario: foco en inputs */
-select:focus, /* comentario: foco en selects */
-
-
-/* Nav */ /* comentario: navegación principal */
-nav { /* comentario: contenedor nav */
-    display: flex; /* comentario: layout en línea flexible */
-    flex-wrap: wrap; /* comentario: permitir salto de elementos */
-    gap: 0.5rem; /* comentario: espacio entre enlaces */
-    margin: 1rem; /* comentario: margen externo */
-    padding: 0; /* comentario: sin padding por defecto */
-    align-items: center; /* comentario: centrar verticalmente */
-} /* comentario: fin nav */
-
-nav a { /* comentario: enlaces de navegación */
-    border-radius: 8px; /* comentario: bordes redondeados */
-    border: 1px solid var(--green-mid); /* comentario: borde verde intermedio */
-    background-color: var(--white); /* comentario: fondo blanco */
-    color: var(--green); /* comentario: texto verde */
-    text-decoration: none; /* comentario: sin subrayado */
-    padding: 8px 12px; /* comentario: relleno interno */
-    font-weight: bold; /* comentario: texto en negrita */
-    transition: background-color 0.2s, color 0.2s; /* comentario: transiciones suaves */
-} /* comentario: fin nav a */
-
-nav a:hover, /* comentario: hover nav */
-nav a:focus { /* comentario: foco nav */
-    background-color: var(--green-dark); /* comentario: fondo oscuro en hover/focus */
-    color: var(--white); /* comentario: texto blanco en hover/focus */
-} /* comentario: fin hover nav */
-
-/* Main */ /* comentario: contenido principal */
-main { /* comentario: contenedor main */
-    max-width: 1000px; /* comentario: ancho máximo */
-    margin: 1rem auto; /* comentario: centrar y margen vertical */
-    background-color: var(--white); /* comentario: fondo blanco */
-    padding: 20px; /* comentario: relleno interno */
-    border-radius: 10px; /* comentario: bordes redondeados */
-    width: auto; /* comentario: ancho automático (eliminar ancho fijo) */
-} /* comentario: fin main */
-
-/* Headings */ /* comentario: estilos para títulos */
-h1, h2, h3 { /* comentario: aplicar a h1-h3 */
-    font-family: "Segoe UI", Verdana, sans-serif; /* comentario: tipografía de encabezados */
-    margin-top: 0; /* comentario: eliminar margen superior */
-} /* comentario: fin h1-h3 */
-
-h2 { /* comentario: estilo específico para h2 */
-    background-color: var(--green-mid); /* comentario: fondo verde intermedio */
-    color: var(--white); /* comentario: texto blanco */
-    padding: 8px; /* comentario: relleno */
-    border-radius: 5px; /* comentario: bordes redondeados */
-} /* comentario: fin h2 */
-
-/* Tabla responsiva */ /* comentario: estilos de tabla */
-table { /* comentario: tabla general */
-    width: 100%; /* comentario: ocupar todo el ancho disponible */
-    border-collapse: collapse; /* comentario: colapsar bordes de la tabla */
-    margin: 20px 0; /* comentario: margen vertical */
-    overflow-wrap: anywhere; /* comentario: permitir quiebres largos en celdas */
-} /* comentario: fin table */
-
-th, td { /* comentario: celdas de la tabla */
-    border: 1px solid var(--green-mid); /* comentario: borde verde intermedio */
-    padding: 8px; /* comentario: relleno de celdas */
-    text-align: center; /* comentario: centrar contenido */
-} /* comentario: fin th/td */
-
-th { /* comentario: cabeceras de tabla */
-    background-color: var(--green); /* comentario: fondo verde principal */
-    color: var(--white); /* comentario: texto blanco en cabeceras */
-} /* comentario: fin th */
-
-/* Si la tabla no cabe, permitir scroll horizontal */ /* comentario: manejo de tablas anchas */
-table { /* comentario: regla para scroll horizontal */
-    display: block; /* comentario: display block para overflow funcionar */
-    overflow-x: auto; /* comentario: permitir desplazamiento horizontal */
-    -webkit-overflow-scrolling: touch; /* comentario: suavizado de scroll en iOS */
-} /* comentario: fin table overflow */
-
-/* Formulario: estilos limpios sin <br> */ /* comentario: estilos de formulario */
-fieldset { /* comentario: agrupador de controles */
-    border-radius: 8px; /* comentario: bordes redondeados */
-    padding: 1rem; /* comentario: relleno interno */
-    border: 1px solid rgba(0,0,0,0.08); /* comentario: borde muy sutil */
-    margin: 0; /* comentario: eliminar margen por defecto */
-} /* comentario: fin fieldset */
-
-/* Etiquetas y controles apilados por defecto para máxima compatibilidad */ /* comentario: layout de etiquetas */
-fieldset label { /* comentario: etiqueta dentro de fieldset */
-    display: block; /* comentario: mostrar en bloque */
-    margin: 0.5rem 0 0.25rem; /* comentario: margen superior e inferior pequeño */
-    font-weight: 600; /* comentario: peso medio */
-} /* comentario: fin label */
-
-fieldset input[type="text"], /* comentario: input tipo texto */
-fieldset input[type="email"], /* comentario: input tipo email */
-fieldset input[type="date"], /* comentario: input tipo fecha */
-fieldset input[type="number"], /* comentario: input tipo número */
-fieldset input[type="password"], /* comentario: input tipo contraseña */
-fieldset input[type="time"], /* comentario: input tipo hora */
-fieldset input[type="tel"], /* comentario: input tipo teléfono */
-fieldset select, /* comentario: select */
-fieldset textarea { /* comentario: textarea */
-    width: 100%; /* comentario: ancho completo del contenedor */
-    padding: 0.45rem 0.6rem; /* comentario: relleno interno */
-    border: 1px solid rgba(0,0,0,0.12); /* comentario: borde sutil */
-    border-radius: 6px; /* comentario: bordes redondeados */
-    font-size: 1rem; /* comentario: tamaño de fuente legible */
-    background: #fff; /* comentario: fondo blanco */
-} /* comentario: fin controles de formulario */
-
-/* Checkbox inline con su label */ /* comentario: estilo de checkbox */
-input[type="checkbox"] { /* comentario: casilla de verificación */
-    margin-right: 0.5rem; /* comentario: espacio a la derecha */
-    transform: translateY(2px); /* comentario: ajustar verticalmente la casilla */
-} /* comentario: fin checkbox */
-
-/* Botones del formulario */ /* comentario: estilos para botones */
-input[type="submit"], /* comentario: botón enviar */
-input[type="reset"] { /* comentario: botón reset */
-    background-color: var(--green); /* comentario: fondo verde */
-    color: var(--white); /* comentario: texto blanco */
-    border: none; /* comentario: sin borde visible */
-    padding: 8px 14px; /* comentario: relleno */
-    border-radius: 6px; /* comentario: bordes redondeados */
-    cursor: pointer; /* comentario: cursor clicable */
-    font-weight: bold; /* comentario: texto en negrita */
-    transition: background-color 0.2s; /* comentario: transición de fondo */
-    margin-right: 0.5rem; /* comentario: separación entre botones */
-} /* comentario: fin botones */
-
-input[type="submit"]:hover, /* comentario: hover submit */
-input[type="reset"]:hover { /* comentario: hover reset */
-    background-color: var(--green-dark); /* comentario: fondo más oscuro al pasar el ratón */
-} /* comentario: fin hover botones */
-
-/* Footer */ /* comentario: pie de página */
-footer { /* comentario: contenedor footer */
-    background-color: var(--green); /* comentario: fondo verde */
-    color: var(--white); /* comentario: texto blanco */
-    text-align: center; /* comentario: centrar texto */
-    padding: 10px; /* comentario: relleno */
-    border-radius: var(--radius); /* comentario: radio de borde usando variable */
-    margin: 1rem; /* comentario: margen externo */
-} /* comentario: fin footer */
-
-/* Accessibility helpers */ /* comentario: utilidades de accesibilidad */
-.visually-hidden { /* comentario: ocultar visualmente pero mantener accesible */
-    position: absolute !important; /* comentario: posicionar fuera del flujo */
-    height: 1px; width: 1px; /* comentario: tamaño mínimo para accesibilidad */
-    overflow: hidden; /* comentario: ocultar contenido desbordado */
-    clip: rect(1px, 1px, 1px, 1px); /* comentario: recorte para ocultación */
-    white-space: nowrap; /* comentario: evitar saltos de línea */
-} /* comentario: fin visually-hidden */
-
-/* Responsive adjustments */ /* comentario: ajustes responsivos */
-@media (max-width: 700px) { /* comentario: reglas para pantallas pequeñas */
-    header img { width: 120px; } /* comentario: logo más pequeño en móvil */
-    header h1 { font-size: 1rem; text-align: left; } /* comentario: h1 más pequeño y alineado a la izquierda */
-    nav { margin: 0.5rem; } /* comentario: menos margen en navegación */
-    main { margin: 0.5rem; padding: 1rem; } /* comentario: ajustar márgenes y padding del main */
+/* Reset y variables */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
+:root{
+    --green: #3c9a5f;
+    --green-dark: #2d7448;
+    --green-mid: #67c587;
+    --bg: #f4f6f8;
+    --text: #222;
+    --white: #fff;
+    --radius: 8px;
+    --gap: 0.75rem;
+    --control-border: 2px; /* ancho fijo para evitar saltos */
+    --control-border-color: rgba(0,0,0,0.12);
+}
+
+/* Base */
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background-color: var(--bg);
+    line-height: 1.5;
+}
+
+/* Layout principal */
+header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background-color: var(--green);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    margin: 0.75rem;
+}
+header img { width: 160px; height: auto; object-fit: contain; }
+header h1 { margin: 0; flex: 1 1 auto; text-align: center; font-size: 1.25rem; color: var(--white); font-weight: 700; }
+header .lang-switch { color: var(--white); text-decoration: none; padding: 0.25rem 0.5rem; border-radius: 6px; border: 1px solid rgba(255,255,255,0.15); }
+header button { background-color: var(--green-mid); color: var(--white); border: none; padding: 8px 14px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background-color 0.2s ease; margin-left: 0.25rem; }
+
+/* Nav */
+nav { display:flex; flex-wrap:wrap; gap:0.5rem; margin:1rem; padding:0; align-items:center; }
+nav a { border-radius:8px; border:1px solid var(--green-mid); background:#fff; color:var(--green); text-decoration:none; padding:8px 12px; font-weight:bold; transition:background-color .2s, color .2s; }
+nav a:hover, nav a:focus { background-color:var(--green-dark); color:var(--white); }
+
+/* Main container */
+main {
+    max-width: 1000px;
+    margin: 1rem auto;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+    width: auto;
+}
+
+/* Form: estructura y controles */
+fieldset {
+    border-radius: 8px;
+    padding: 1rem;
+    border: 1px solid rgba(0,0,0,0.08);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+fieldset label { display:block; margin: 0.25rem 0 0.5rem; font-weight:600; }
+
+/* Controles: fijo el borde para no cambiar tamaño al validar */
+fieldset input[type="text"],
+fieldset input[type="email"],
+fieldset input[type="date"],
+fieldset input[type="number"],
+fieldset input[type="password"],
+fieldset input[type="time"],
+fieldset input[type="tel"],
+fieldset select,
+fieldset textarea {
+    width: 100%;
+    padding: 0.45rem 0.6rem;
+    border: var(--control-border) solid var(--control-border-color);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.12s;
+    outline: none;
+}
+
+/* Mantener tamaño al cambiar el borde: usar box-shadow para foco visual */
+fieldset input:focus,
+fieldset select:focus,
+fieldset textarea:focus {
+    box-shadow: 0 0 0 3px rgba(76,175,80,0.12);
+}
+
+/* Validación visual: solo color, no cambia layout */
+.campo-invalido {
+    border-color: #d9534f !important; /* rojo */
+    box-shadow: 0 0 0 3px rgba(217,83,79,0.06);
+}
+.campo-valido {
+    border-color: #5cb85c !important; /* verde */
+    box-shadow: 0 0 0 3px rgba(92,184,92,0.06);
+}
+
+/* Checkbox: alinear etiqueta y control */
 .checkbox {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    /* ocupar toda la anchura para separarse de los botones */
     margin-top: 0.25rem;
 }
-
-
-
-/* Alineado checkbox cuando se usa input + label separados */
-input[type="checkbox"] {
+.checkbox input[type="checkbox"] {
+    flex: 0 0 auto;
+    margin: 0;
     transform: translateY(0);
-    margin-right: 0.5rem;
 }
+.checkbox label { flex: 1 1 auto; margin: 0; }
 
-/* Espaciado entre imágenes del contenido (no afecta al logo en header) */
-main img {
-    margin-bottom: 1rem;
-    display: block;
-}
-
-/* Si hay miniaturas dentro de enlaces */
-main a img {
-    margin-bottom: 0.5rem;
-}
-
-/* Mejorar layout del formulario: usar flex y gap */
-fieldset {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-
-
-/*Validación visual de campos*/
-
-input.campo-invalido, select.campo-invalido {
-    border: 2px solid red !important;
-}
-
-input.campo-valido, select.campo-valido {
-    border: 2px solid green !important;
-}
-
-
-.form-progress {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin: 0.5rem 0 1rem 0;
-}
-
-.form-progress progress {
-    width: 100%;
-    height: 14px;
-    appearance: none;
-    border: 1px solid rgba(0,0,0,0.08);
-    border-radius: 6px;
-    overflow: hidden;
-}
-
-.form-progress progress::-webkit-progress-bar {
-    background: #fff;
-}
-
-.form-progress progress::-webkit-progress-value {
-    background: var(--green);
-}
-
-.form-progress #progressLabel {
-    min-width: 48px;
-    text-align: right;
-    font-weight: 600;
-}
-
-button[type="submit"],
-button[type="reset"] {
+/* Botones: inputs y botones consistentes */
+input[type="submit"], input[type="reset"],
+button[type="submit"], button[type="reset"] {
     background-color: var(--green);
     color: var(--white);
     border: none;
@@ -349,13 +135,48 @@ button[type="reset"] {
     transition: background-color 0.2s;
     margin-right: 0.5rem;
 }
-
-button[type="submit"]:hover,
-button[type="reset"]:hover {
+input[type="submit"]:hover, input[type="reset"]:hover,
+button[type="submit"]:hover, button[type="reset"]:hover {
     background-color: var(--green-dark);
 }
 
-button[type="submit"],
-button[type="reset"] {
-    order: 999;
+/* Progreso del formulario */
+.form-progress { display:flex; align-items:center; gap:0.5rem; margin:0.5rem 0 1rem 0; }
+.form-progress progress { width:100%; height:14px; appearance:none; border-radius:6px; overflow:hidden; border:1px solid rgba(0,0,0,0.08); }
+.form-progress progress::-webkit-progress-bar { background:#fff; }
+.form-progress progress::-webkit-progress-value { background:var(--green); }
+#progressLabel { min-width:48px; text-align:right; font-weight:600; }
+
+/* Mensajes de error accesibles: estilo limpio (color visual) */
+span[id^="error"] {
+    color: #d9534f;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    min-height: 1.1rem; /* evitar salto vertical cuando aparece/desaparece */
+    display: inline-block;
+}
+
+/* Visual hidden helper */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* Tabla y otros */
+table { width: 100%; border-collapse: collapse; margin: 20px 0; display:block; overflow-x:auto; -webkit-overflow-scrolling: touch; }
+th, td { border: 1px solid var(--green-mid); padding: 8px; text-align: center; }
+th { background-color: var(--green); color: var(--white); }
+
+/* Footer */
+footer { background-color: var(--green); color: var(--white); text-align:center; padding:10px; border-radius:var(--radius); margin:1rem; }
+
+/* Responsive */
+@media (max-width:700px) {
+    header img { width: 120px; }
+    header h1 { font-size: 1rem; text-align:left; }
+    nav { margin: 0.5rem; }
+    main { margin: 0.5rem; padding: 1rem; }
 }

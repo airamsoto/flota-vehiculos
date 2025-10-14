@@ -1,3 +1,5 @@
+
+
 const campoNombre = document.getElementById('usuario'); //cogemos el nombre que ha escrito el usuario
 const errorNombre = document.getElementById('errorNombre');//cogemos el id del error
 if (campoNombre && errorNombre) {
@@ -62,6 +64,23 @@ if (campoPassword && errorPassword) {
         }
     });
 }
+
+//REVISAR ERRORES FORMULARIO
+const vehiculoForm = document.getElementById('vehiculo_form');
+const errorVehiculo = document.getElementById('errorVehiculo');
+if (vehiculoForm && errorVehiculo) {
+    vehiculoForm.addEventListener('input', function() {
+        if ((vehiculoForm.value || '') === '') {
+            errorVehiculo.textContent = 'Por favor, selecciona un vehículo.';
+            vehiculoForm.classList.add('campo-invalido');
+        } else {
+            errorVehiculo.textContent = '';
+            vehiculoForm.classList.remove('campo-invalido');
+            vehiculoForm.classList.add('campo-valido');
+        }
+    });
+}
+
 const campoDuracion = document.getElementById('duracion');
 const errorDuracion = document.getElementById('errorDuracion');
 if (campoDuracion && errorDuracion) {
@@ -135,22 +154,6 @@ function validarFechas() {
     }
 }
 
-//REVISAR ERRORES FORMULARIO
-const vehiculoForm = document.getElementById('vehiculo_form');
-const errorVehiculo = document.getElementById('errorVehiculo');
-if (vehiculoForm && errorVehiculo) {
-    vehiculoForm.addEventListener('input', function() {
-        if ((vehiculoForm.value || '') === '') {
-            errorVehiculo.textContent = 'Por favor, selecciona un vehículo.';
-            vehiculoForm.classList.add('campo-invalido');
-        } else {
-            errorVehiculo.textContent = '';
-            vehiculoForm.classList.remove('campo-invalido');
-            vehiculoForm.classList.add('campo-valido');
-        }
-    });
-}
-
 if (campoFechaIni) campoFechaIni.addEventListener('input', validarFechas);
 if (campoFechaFin) campoFechaFin.addEventListener('input', validarFechas);
 
@@ -188,6 +191,37 @@ if (botonLimpiar) { //si existe el boton...
         }
     });
 }
+
+(function () {
+    const form = document.getElementById('formulario_reserva');
+    const submitBtn = document.getElementById('submitForm');
+    if (!form || !submitBtn) return;
+
+    // Habilitar/deshabilitar botón según validez del form
+    function toggleSubmit() {
+        const disabled = !form.checkValidity();
+        submitBtn.disabled = disabled;
+        submitBtn.setAttribute('aria-disabled', String(disabled));
+    }
+
+    form.addEventListener('input', toggleSubmit);
+    form.addEventListener('change', toggleSubmit);
+    // inicializar estado del botón
+    toggleSubmit();
+
+    // Usar submit del form en lugar de click del botón
+    form.addEventListener('submit', function (e) {
+        if (!form.checkValidity()) {
+            e.preventDefault();
+            // muestra mensajes nativos (si soportado) y mueve foco al primer inválido
+            if (typeof form.reportValidity === 'function') form.reportValidity();
+            const firstInvalid = form.querySelector(':invalid') || form.querySelector('.campo-invalido');
+            if (firstInvalid && typeof firstInvalid.focus === 'function') firstInvalid.focus();
+            return;
+        }
+        // formulario válido: dejar que se envíe normalmente
+    });
+})();
 
 (function () {
     const form = document.getElementById('formulario_reserva');
