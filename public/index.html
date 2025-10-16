@@ -10,9 +10,6 @@
 </head>
 
 
-
-
-
 <header>
     <img id="logo" src="./images/logo2.png" alt="Logo de la página" width="250">
     <h1>WeiZhu Vehiculos &copy;</h1>
@@ -182,8 +179,9 @@
                 <label for="horaFin">Hora de fin: </label>
                 <input type="time" id="horaFin" name="horaFin" required>
 
-                <label for="telefono">Telefono</label>
+                <label for="telefono">Telefono &#40sin espacios&#41</label>
                 <input type="tel" name="telefono" id="telefono" pattern="[0-9]{9}">
+                <span id="errorTelefono" style="color:red; font-size: small;" aria-live="polite"></span>
 
                 <div class="checkbox">
                     <label for="aceptarCondiciones">Acepto las condiciones</label>

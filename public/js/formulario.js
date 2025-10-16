@@ -158,6 +158,22 @@ function validarFechas() {
 if (campoFechaIni) campoFechaIni.addEventListener('input', validarFechas);
 if (campoFechaFin) campoFechaFin.addEventListener('input', validarFechas);
 
+const campoTelefono = document.getElementById('telefono'); //cogemos el nombre que ha escrito el usuario
+const errorTelefono = document.getElementById('errorTelefono');//cogemos el id del error
+if (campoTelefono && errorTelefono) {
+    campoTelefono.addEventListener('input', function () { //cuando el usuario escriba en el campo...
+        if (!/^[0-9]{9}$/.test((campoTelefono.value || '').trim())){ 
+            errorTelefono.textContent = 'El telefono tienen que ser 9 digitos.'; //mensaje de error
+            campoTelefono.classList.add('campo-invalido');
+            campoTelefono.classList.remove('campo-valido');
+        } else {
+            errorTelefono.textContent = ''; //si no, no hay error
+            campoTelefono.classList.add('campo-valido');
+            campoTelefono.classList.remove('campo-invalido');
+        }
+    });
+}
+
 const formulario_reserva = document.getElementById('formulario_reserva');
 // no uses preventDefault en input; dejamos el listener vacío como placeholder
 if (formulario_reserva) {

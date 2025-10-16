@@ -6,8 +6,8 @@
 }
 
 :root{
-    --green: #3c9a5f;
-    --green-dark: #2d7448;
+    --green: #8b3c2e;
+    --green-dark: #236b45;
     --green-mid: #67c587;
     --bg: #f4f6f8;
     --text: #222;
@@ -46,7 +46,12 @@ header button { background-color: var(--green-mid); color: var(--white); border:
 /* Nav */
 nav { display:flex; flex-wrap:wrap; gap:0.5rem; margin:1rem; padding:0; align-items:center; }
 nav a { border-radius:8px; border:1px solid var(--green-mid); background:#fff; color:var(--green); text-decoration:none; padding:8px 12px; font-weight:bold; transition:background-color .2s, color .2s; }
-nav a:hover, nav a:focus { background-color:var(--green-dark); color:var(--white); }
+nav a:hover, nav a:focus {
+    background-color: var(--green-mid);
+    color: white;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
 
 /* Main container */
 main {
@@ -138,6 +143,12 @@ button[type="submit"], button[type="reset"] {
 input[type="submit"]:hover, input[type="reset"]:hover,
 button[type="submit"]:hover, button[type="reset"]:hover {
     background-color: var(--green-dark);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(46, 139, 87, 0.2);
+    background-color: #f9fffa;
 }
 
 /* Progreso del formulario */
